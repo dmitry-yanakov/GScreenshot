@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GScreenshot — Privacy & Direct Sync to Google Drive</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description"
+        content="Securely capture and store screenshots directly to your Google Drive. Your drive, your rules. No middlemen.">
+    <meta name="keywords" content="screenshot, google drive sync, privacy tool, image editor">
+
+    <meta property="og:title" content="GScreenshot — Secure & Direct">
+    <meta property="og:description" content="Direct sync to your personal cloud. No servers, just your data.">
+    <meta property="og:type" content="website">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="bg-glow"></div>
+
+    <div class="main-content">
+        <nav class="container py-3 d-flex justify-content-between align-items-center flex-nowrap">
+            <a href="#" class="logo-box">
+                <div class="logo-icon">GS</div>
+                <span class="d-none d-sm-inline">GScreenshot</span>
+            </a>
+
+            <div class="custom-select-wrapper" id="customLangSelector">
+                <div class="select-trigger">
+                    <i class="bi bi-globe text-primary me-2"></i>
+                    <span id="current-lang">Eng</span>
+                    <i class="bi bi-chevron-down ms-2 arrow"></i>
+                </div>
+                <div class="select-options">
+                    <div class="option" data-value="en">English</div>
+                    <div class="option" data-value="ru">Русский</div>
+                    <div class="option" data-value="ua">Українська</div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="container py-5 mt-3">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="display-1 fw-800 mb-4" style="letter-spacing: -4px;" id="hero-title">
+                        Privacy -<br><span class="text-gradient">Owned by You.</span>
+                    </h1>
+                    <p class="lead text-secondary mb-5 fs-4" id="hero-desc">
+                        Capture, edit, and store screenshots securely on your Google Drive. Direct upload with no
+                        middlemen.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#" class="btn-modern btn-win"><i class="bi bi-microsoft"></i> Windows</a>
+                        <a href="#" class="btn-modern btn-mac"><i class="bi bi-apple"></i> macOS</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="screenshot-mockup">
+                        <div class="floating-tools-top">
+                            <i class="bi bi-pencil-fill tool-icon"></i>
+                            <i class="bi bi-arrow-up-right tool-icon active"></i>
+                            <i class="bi bi-fonts tool-icon"></i>
+                            <i class="bi bi-eye-slash tool-icon"></i>
+                            <i class="bi bi-square tool-icon"></i>
+                        </div>
+                        <div class="selection-area">
+                            <div class="selection-handle" style="top: -5px; left: -5px;"></div>
+                            <div class="selection-handle" style="top: -5px; right: -5px;"></div>
+                            <div class="selection-handle" style="bottom: -5px; left: -5px;"></div>
+                            <div class="selection-handle" style="bottom: -5px; right: -5px;"></div>
+                            <div
+                                style="position: absolute; top: 40%; left: 30%; color: var(--primary); font-size: 3rem;">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="container py-5 my-5">
+            <div class="security-badge">
+                <div class="text-center mb-5">
+                    <h2 class="fw-800 display-5" id="sec-title">Why is it safe?</h2>
+                    <p class="text-secondary" id="sec-desc">Your screenshot is sent directly to your personal Google
+                        Drive storage</p>
+                </div>
+
+                <div class="row align-items-center text-center">
+                    <div class="col-md-3">
+                        <div class="node-circle"><i class="bi bi-laptop"></i></div>
+                        <h5 class="mt-3 fw-bold" id="sec-pc">Your PC</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div
+                            style="min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <div class="direct-arrow-anim">
+                                <i class="bi bi-chevron-double-right"></i>
+                            </div>
+                            <div class="mt-2 py-1 px-3 mb-3 d-inline-block rounded-pill border border-primary border-opacity-25 small text-primary"
+                                style="white-space: nowrap;" id="sec-direct">
+                                Direct API Upload
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="node-circle" style="border-color: #34a853;"><i class="bi bi-google"></i></div>
+                        <h5 class="mt-3 fw-bold">Google Drive</h5>
+                    </div>
+                </div>
+
+                <div class="row mt-5 g-4 text-center text-md-start">
+                    <div class="col-md-6">
+                        <h4 class="fw-bold d-flex justify-content-center justify-content-md-start"><i
+                                class="bi bi-shield-check text-primary me-2"></i>
+                            <p id="sec-first-info">No intermediaries</p>
+                        </h4>
+                        <p class="text-secondary" id="sec-first-desc">Data never touches our servers. Files are sent via
+                            official API straight to your Drive</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bold d-flex justify-content-center justify-content-md-start"><i
+                                class="bi bi-link-45deg text-primary me-2 "></i>
+                            <p id="sec-second-info">Full control</p>
+                        </h4>
+                        <p class="text-secondary" id="sec-second-desc">You are the sole owner of your files. Manage
+                            access rights and delete screenshots at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <h2 class="fw-800 mb-5 text-center" id="tools-title">Toolkit</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <div class="icon-box"><i class="bi bi-pencil"></i></div>
+                        <h5 class="fw-bold" id="tools-name-pencil">Pencil</h5>
+                        <p class="small text-secondary" id="tools-desc-pencil">Freehand drawing. Perfect for quick notes
+                            or highlighting custom areas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <div class="icon-box"><i class="bi bi-arrow-up-right"></i></div>
+                        <h5 class="fw-bold" id="tools-name-arrow">Arrow</h5>
+                        <p class="small text-secondary" id="tools-desc-arrow">Point to what matters. Smart arrows that
+                            look professional and sharp.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <div class="icon-box"><i class="bi bi-eye-slash"></i></div>
+                        <h5 class="fw-bold" id="tools-name-blur">Blur</h5>
+                        <p class="small text-secondary" id="tools-desc-blur">Protect privacy. Mask passwords, faces, or
+                            sensitive data in one click.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <div class="icon-box"><i class="bi bi-brush"></i></div>
+                        <h5 class="fw-bold" id="tools-name-highlight">Highlight</h5>
+                        <p class="small text-secondary" id="tools-desc-highlight">Focus attention. Marker effect to
+                            emphasize important text or buttons.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <div class="icon-box"><i class="bi bi-fonts"></i></div>
+                        <h5 class="fw-bold" id="tools-name-text">Text</h5>
+                        <p class="small text-secondary" id="tools-desc-text">Add explanations. Type text directly on
+                            your screenshot with font options.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card">
+                        <div class="icon-box"><i class="bi bi-type-underline"></i></div>
+                        <h5 class="fw-bold" id="tools-name-underline">Underline</h5>
+                        <p class="small text-secondary" id="tools-desc-underline">Underline the essence. Quickly
+                            highlight lines of text without extra noise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-800 display-4 mb-4 text-center" id="join-title">Join us</h2>
+                <p class="text-secondary" id="join-desc">Be part of something bigger. Protect your privacy and take
+                    control of your screenshots.</p>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
+                <a href="#" class="btn-modern btn-win"><i class="bi bi-microsoft"></i> Windows</a>
+                <a href="#" class="btn-modern btn-mac"><i class="bi bi-apple"></i> macOS</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container py-5 border-top border-secondary border-opacity-10">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <a href="#" class="logo-box">
+                            <div class="logo-icon">GS</div>
+                            <span class="text-white">GScreenshot.</span>
+                        </a>
+                        <p class="small text-secondary mt-3" id="footer-slogan">
+                            Your drive, your rules. <span id="current-year"></span>.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="d-flex justify-content-md-end gap-4 fs-4 mb-2">
+                            <a href="#" class="footer-link"><i class="bi bi-github"></i></a>
+                            <a href="#" class="footer-link"><i class="bi bi-google"></i></a>
+                            <a href="#" class="footer-link"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+
+</html>

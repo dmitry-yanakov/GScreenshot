@@ -1,0 +1,22 @@
+# 1. Включаем сжатие текста, стилей и скриптов
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
+
+# 2. Настраиваем кэширование (Images, CSS, JS)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# 3. Убираем index.html из адресной строки
+DirectoryIndex index.html
+
+# 4. Принудительный HTTPS (если есть SSL сертификат)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
