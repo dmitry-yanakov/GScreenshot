@@ -62,6 +62,14 @@
                         <a href="#" class="btn-modern btn-win"><i class="bi bi-microsoft"></i> Windows</a>
                         <a href="#" class="btn-modern btn-mac"><i class="bi bi-apple"></i> macOS</a>
                     </div>
+
+                    <div class="mt-3 ps-1">
+                        <p class="text-secondary mb-0" style="font-size: 0.85rem; opacity: 0.6;">
+                            <i class="bi bi-info-circle me-1"></i> 
+                            <span id="hero-trouble">Having trouble installing? </span>
+                            <a href="#how-to-run" class="text-white text-decoration-underline opacity-100 ms-1" id="hero-guide">View launch guide</a>
+                        </p>
+                    </div>
                 </div>
 
                 <div class="col-lg-6">
@@ -194,15 +202,138 @@
             </div>
         </section>
 
+        <section id="info" class="container-fluid px-md-5 mt-5 pt-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="text-white mb-3" id="info-title">Information</h2>
+                    <p class="text-secondary mx-auto" id="info-desc">
+                        GScreenshot is a non-commercial project, not a product of a large corporation with a massive budget.<br>
+                        We choose the path of transparency, openly sharing the technical nuances of software development created independently from major platforms.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="tool-card h-100 w-100">
+                            <div class="icon-box">
+                                <img src="images/microsoft_logo.svg" height="18" alt="MS" style="filter: invert(1);">
+                            </div>
+                            <h5 class="fw-bold text-white" id="info-ms-authenticode-title">Microsoft Authenticode</h5>
+                            <p class="small text-secondary" id="info-ms-authenticode-desc">
+                                A digital signature for Windows that confirms the publisher. Its absence simply means the project is non-commercial and does not pay for annual Microsoft certificates (~$400/year).
+                            </p>
+                            <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/introduction-to-code-signing" 
+                            target="_blank" class="text-primary text-decoration-none small fw-bold mt-2 d-inline-block">
+                                <span id="info-ms-official-description">Official Description</span> <i class="bi bi-arrow-up-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="tool-card h-100 w-100">
+                            <div class="icon-box">
+                                <img src="images/apple_logo_black.svg" height="18" alt="Apple" style="filter: invert(1);">
+                            </div>
+                            <h5 class="fw-bold text-white" id="info-apple-notarization">Apple Notarization</h5>
+                            <p class="small text-secondary" id="info-apple-notarization-desc">
+                                Apple's security procedure where the Gatekeeper system automatically flags third-party apps as "unverified" even if they are safe. Obtaining a Gatekeeper certificate costs (~$99/year).
+                            </p>
+                            <a href="https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution" 
+                            target="_blank" class="text-primary text-decoration-none small fw-bold mt-2 d-inline-block">
+                                <span id="info-apple-official-description">Official Description</span> <i class="bi bi-arrow-up-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-run" class="container-fluid px-md-5 my-5 py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="text-white mb-3" id="setup-title">How to Launch the App</h2>
+                    <p class="text-secondary" id="setup-desc">A quick guide to navigating system security restrictions</p>
+                </div>
+
+                <div class="row g-5">
+                    <div class="col-md-6 px-lg-5">
+                        <h4 class="h5 text-white mb-4 d-flex align-items-center">
+                            <i class="bi bi-windows text-primary me-2"></i> <span class="fw-bold text-white">Windows (SmartScreen)</span>
+                        </h4>
+                        <div class="ps-3 border-start border-primary border-opacity-25" style="border-width: 2px !important;">
+                            <div class="mb-3 d-flex align-items-start">
+                                <span class="text-primary fw-bold me-3">01.</span>
+                                <span class="text-light opacity-75" id="setup-win-first">Click <strong>"More info"</strong> in the security window.</span>
+                            </div>
+                            <div class="mb-3 d-flex align-items-start">
+                                <span class="text-primary fw-bold me-3">02.</span>
+                                <span class="text-light opacity-75" id="setup-win-second">Click the <strong>"Run anyway"</strong> button that appears.</span>
+                            </div>
+                            <div class="d-flex align-items-start text-success opacity-75">
+                                <span class="text-primary fw-bold me-3">03.</span>
+                                <span class="text-light italic small" id="setup-win-third">The app will launch and be added to your system's whitelist.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 px-lg-5">
+                        <h4 class="h5 text-white mb-4 d-flex align-items-center">
+                            <i class="bi bi-apple text-primary me-2"></i> <span class="fw-bold text-white">macOS (Gatekeeper)</span>
+                        </h4>
+                        <div class="ps-3 border-start border-primary border-opacity-25" style="border-width: 2px !important;">
+                            <div class="mb-3">
+                                <div class="d-flex align-items-start mb-2">
+                                    <div class="text-primary fw-bold me-3">01.</div>
+                                    <div class="text-light opacity-75 w-100"> <span id="setup-mac-first">Copy the command below into the Terminal:</span>
+                                        <div class="mt-2 bg-black bg-opacity-40 p-2 rounded border border-secondary border-opacity-20 d-flex justify-content-between align-items-center">
+                                            <code class="text-info small" style="font-family: 'JetBrains Mono', monospace;">sudo xattr -rd com.apple.quarantine </code>
+                                            <button class="btn btn-link btn-sm text-secondary p-0 ms-2" 
+                                                    type="button"
+                                                    data-bs-toggle="tooltip" 
+                                                    data-bs-placement="top" 
+                                                    title="Copy to clipboard"
+                                                    onclick="copyCode(this, 'sudo xattr -rd com.apple.quarantine ')">
+                                                <i class="bi bi-clipboard"></i>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mb-3 d-flex align-items-start">
+                                <span class="text-primary fw-bold me-3">02.</span>
+                                <span class="text-light opacity-75" id="setup-mac-second">Drag the <strong>GScreenshot</strong> icon into the Terminal window (this adds the file path).</span>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <span class="text-primary fw-bold me-3">03.</span>
+                                <span class="text-light opacity-75" id="setup-mac-third">Press <strong>Enter</strong> and provide your password if prompted.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="container py-5">
             <div class="text-center mb-5">
-                <h2 class="fw-800 display-4 mb-4 text-center" id="join-title">Join us</h2>
-                <p class="text-secondary" id="join-desc">Be part of something bigger. Protect your privacy and take
-                    control of your screenshots.</p>
+                <h2 class="fw-800 display-5 mb-3 text-center text-white" id="join-title">Join our community</h2>
+                <p class="text-secondary" id="join-desc">Become part of something bigger. Help us improve GScreenshot by reporting bugs, <br>
+            suggesting new features, or simply staying updated through our community channel.</p>
             </div>
             <div class="d-flex justify-content-center flex-wrap gap-3 mb-5">
                 <a href="#" class="btn-modern btn-win"><i class="bi bi-microsoft"></i> Windows</a>
                 <a href="#" class="btn-modern btn-mac"><i class="bi bi-apple"></i> macOS</a>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center gap-3 mb-4 opacity-50">
+                <div style="height: 1px; width: 40px; background: currentColor;"></div>
+                <span class="small text-uppercase fw-bold" style="letter-spacing: 1px;" id="join-stay-in-touch">Stay in touch</span>
+                <div style="height: 1px; width: 40px; background: currentColor;"></div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                <a href="https://t.me/your_channel" target="_blank" class="btn-modern btn-tg">
+                    <i class="bi bi-telegram"></i> <span id="join-telegram-channel">Telegram Channel</span>
+                </a>
             </div>
         </section>
 
