@@ -370,3 +370,36 @@ footer {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.btn-link.text-secondary:hover {
+    color: #0d6efd !important; /* Цвет станет синим при наведении */
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+.btn-tg {
+    background: rgba(36, 161, 222, 0.05); /* Очень легкий оттенок фона */
+    border: 1px solid rgba(36, 161, 222, 0.4) !important; /* Заметная граница */
+    color: #24A1DE !important;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 30px;
+    border-radius: 12px; /* Подстрой под радиус своих btn-modern */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-tg:hover {
+    background: rgba(36, 161, 222, 0.15);
+    border-color: #24A1DE !important; /* Яркая граница при наведении */
+    color: #24A1DE !important;
+    box-shadow: 0 0 20px rgba(36, 161, 222, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-tg i {
+    font-size: 1.3rem;
+}
