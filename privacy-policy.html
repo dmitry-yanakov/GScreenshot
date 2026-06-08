@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GScreenshot — Privacy & Direct Sync to Google Drive</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description"
+        content="Securely capture and store screenshots directly to your Google Drive. Your drive, your rules. No middlemen.">
+    <meta name="keywords" content="screenshot, google drive sync, privacy tool, image editor">
+
+    <meta property="og:title" content="GScreenshot — Secure & Direct">
+    <meta property="og:description" content="Direct sync to your personal cloud. No servers, just your data.">
+    <meta property="og:type" content="website">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="glow"></div>
+            <img src="images/logo.png" alt="GS" class="main-logo">
+            <svg class="loader-ring" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" />
+                <circle cx="50" cy="50" r="38" style="opacity: 0.3; animation-direction: reverse; animation-duration: 3s;" />
+            </svg>
+        </div>
+    </div>
+
+    <div id="bg-glow"></div>
+
+    <div class="main-content">
+        <nav class="container py-3 d-flex justify-content-between align-items-center flex-nowrap">
+            <a href="index.html" class="logo-box">
+                <div class="logo-icon"><img src="images/logo.png" alt="GScreenshot logo"></div>
+                <span class="d-none d-sm-inline">GScreenshot</span>
+            </a>
+
+            <div class="custom-select-wrapper" id="customLangSelector">
+                <div class="select-trigger">
+                    <i class="bi bi-globe text-primary me-2"></i>
+                    <span id="current-lang">Eng</span>
+                    <i class="bi bi-chevron-down ms-2 arrow"></i>
+                </div>
+                <div class="select-options">
+                    <div class="option" data-value="en">English</div>
+                    <div class="option" data-value="uk">Українська</div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="container py-5 mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="security-badge">
+                        <h1 class="display-4 fw-800 mb-2" id="privacy-policy-title">Privacy Policy</h1>
+                        <p class="text-secondary mb-5" id="privacy-policy-last-updated">Last Updated: June 1, 2026</p>
+
+                        <div class="mb-5">
+                            <p class="lead text-light" id="privacy-policy-intro">
+                                This Privacy Policy governs the processing, storage, and protection of user data within the GScreenshot application (hereinafter referred to as the "Application"). 
+                                Our highest priority is to ensure the security of your information and to provide an architecture that operates directly, without the use of intermediary servers.
+                            </p>
+                        </div>
+
+                        <div class="text-start">
+                            <div class="mb-4">
+                                <h4 class="text-white fw-bold" id="pp-section1-title">1. Collection and Processing of Personal Data</h4>
+                                <p class="text-secondary" id="pp-section1-p1">The Application is designed as a local automation tool. GScreenshot does not collect, store, process, or transfer your personal data, images, metadata, or screenshot history to any third-party servers or the developer's servers.</p>
+                                <p class="text-secondary" id="pp-section1-p2">All processes related to creating, cropping, and editing screenshots are performed exclusively locally within the volatile memory (RAM) and isolated environment of your device.</p>
+                                <p class="text-secondary" id="pp-section1-p3">Images are placed into your device's system clipboard or sent to cloud storage strictly upon your explicit command.</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-white fw-bold" id="pp-section2-title">2. Integration with Google Drive Service</h4>
+                                <p class="text-secondary" id="pp-section2-p1">The Application provides functionality for uploading screenshots to Google Drive cloud storage.</p>
+                                <ul>
+                                    <li class="text-secondary" id="pp-section2-li1"><strong>Direct Connection (No Middlemen):</strong> The connection of your Google Drive account and the subsequent transfer of files are performed directly between the Application on your device and the official Google API servers. No intermediary servers or third-party infrastructures are involved in this process, completely eliminating the possibility of interception or viewing of your data by third parties.</li>
+                                    <li class="text-secondary" id="pp-section2-li2"><strong>Background Processes:</strong> The file transfer process is optimized and executed in the background, without interfering with the user's regular workflow.</li>
+                                    <li class="text-secondary" id="pp-section2-li3"><strong>Scope of Access:</strong> The Application requests access to your Google Drive solely within the scope of permissions necessary to create the dedicated Application folder and save your created screenshots into it.</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-white fw-bold" id="pp-section3-title">3. Requested System Permissions</h4>
+                                <p class="text-secondary" id="pp-section3-p1">To ensure full functionality, the Application requests access to the following system resources of your device:</p>
+                                <ul>
+                                    <li class="text-secondary" id="pp-section3-li1"><strong>Screen Recording:</strong> This permission is used exclusively at the moment you initiate a screenshot capture to grab the visible area (including system notifications, menu elements, tooltips, and setups with multiple monitors). The Application does not perform background recording or hidden monitoring of your screen.</li>
+                                    <li class="text-secondary" id="pp-section3-li2"><strong>Auto-Launch:</strong> An optional feature that can be enabled by the user in the Application settings to automatically start the utility upon operating system boot.</li>
+                                    <li class="text-secondary" id="pp-section3-li3"><strong>Internet Access:</strong> Required solely to ensure direct interaction with Google API servers (file uploads) and for the operation of the Auto-Update module (checking for new versions and downloading them in the background).</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-white fw-bold" id="pp-section4-title">4. Storage of Configuration Data</h4>
+                                <p class="text-secondary" id="pp-section4-p1">All user preferences, including custom hotkey combinations, toolbar parameters, and interface configurations, are saved strictly locally on the user's device. These configuration data are isolated and are not synchronized with external servers.</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-white fw-bold" id="pp-section5-title">5. Links to Third-Party Resources</h4>
+                                <p class="text-secondary" id="pp-section5-p1">The "About" section contains an informational link to the official Application community in the Telegram messenger. This Privacy Policy does not apply to third-party services. Interaction with the Telegram platform is governed by its own policies and regulations.</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <h4 class="text-white fw-bold" id="pp-section6-title">6. Changes to This Policy</h4>
+                                <p class="text-secondary" id="pp-section6-p1">The developer reserves the right to make changes to this Privacy Policy to reflect updates to the Application's functionality or changes in the requirements of distribution platforms. The current version of the document is always accessible within the Application interface or on its official resources.</p>
+                            </div>
+
+                            <div class="mb-5">
+                                <h4 class="text-white fw-bold" id="pp-section7-title">7. Feedback</h4>
+                                <p class="text-secondary" id="pp-section7-p1">For any questions regarding data security and the functioning of the Application, you may contact the developer through the official communication channels specified within the Application.</p>
+                            </div>
+                        </div>
+
+                        <!-- Download Section -->
+                        <div class="tool-card text-center mt-5">
+                            <div class="icon-box mx-auto">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+                            <h4 class="fw-bold text-white mb-3" id="pp-download-title">GScreenshot Privacy Policy</h4>
+                            <p class="text-secondary small mb-4" id="pp-download-desc">
+                                You can download the full version of this document for offline review.
+                            </p>
+                            <a href="docs/GScreenshot_Privacy_Policy_EN.pdf" class="btn-modern btn-win" target="_blank" download id="pp-download-button">
+                                <i class="bi bi-download"></i> Download Document
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container py-5 border-top border-secondary border-opacity-10">
+                <div class="row g-4">
+                    <div class="col-md-6 justify-content-md-start px-lg-5">
+                        <a href="index.html" class="logo-box">
+                            <div class="logo-icon"><img src="images/logo.png" alt="GScreenshot logo"></div>
+                            <span class="text-white">GScreenshot.</span>
+                        </a>
+                        <p class="small text-secondary mt-3" id="footer-slogan">
+                            Your drive, your rules. <span id="current-year"></span>.
+                        </p>
+                    </div>
+                    <div class="col-md-6 justify-content-md-end px-lg-5">
+                        <a href="privacy-policy.html" class="footer-link fw-bold d-flex justify-content-md-end"><i
+                            class="bi bi-shield-check me-1"></i>
+                            <span id="footer-privacy-policy">Privacy Policy</span>
+                        </a>
+                        <div class="d-flex justify-content-md-end gap-4 fs-4 mt-3">
+                            <a href="https://github.com/dmitry-yanakov/GScreenshot" target="_blank" class="footer-link"><i class="bi bi-github"></i></a>
+                            <a href="https://t.me/GScreenshotApp" target="_blank" class="footer-link"><i class="bi bi-telegram"></i></a>
+                            <a href="mailto:support@gscreenshot.com" class="footer-link"><i class="bi bi-envelope-at-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+
+    <script>
+        const startTime = Date.now();
+        const minLoadingTime = 1000;
+
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            const elapsedTime = Date.now() - startTime;
+            const remainingTime = Math.max(0, minLoadingTime - elapsedTime);
+
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.body.style.overflow = 'visible';
+                }, 600);
+            }, remainingTime);
+        });
+    </script>
+</body>
+
+</html>
