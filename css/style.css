@@ -17,7 +17,7 @@ body {
     background-color: var(--bg);
     color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Arial, sans-serif;
-    overflow: hidden; /* Block scroll */
+    overflow-x: hidden; /* Block horizontal scroll, allow vertical */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none;     /* IE 10+ */
     user-select: none;         /* Standard */

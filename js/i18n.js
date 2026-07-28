@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        "hero-title": 'Privacy -<br><span class="text-gradient">Owned by You.</span>',
+        "hero-title": 'Privacy — <span class="text-gradient">Owned by You.</span>',
         "hero-desc": "Capture, edit, and store screenshots securely on your Google Drive. Direct upload with no middlemen.",
         "hero-trouble": "Having trouble installing? ",
         "hero-guide": "View launch guide",
@@ -52,6 +52,12 @@ const translations = {
         "footer-slogan": "Your drive, your rules.",
         "footer-privacy-policy": "Privacy Policy",
         "footer-terms": "Terms and Conditions",
+        "purpose-title": "About GScreenshot & Google Drive",
+        "purpose-subtitle": "How our application works and why it requests access to your Google Drive",
+        "purpose-header-app": "Application Purpose",
+        "purpose-body-app": "GScreenshot is a desktop application designed to simplify your screenshot workflow. It allows you to quickly capture any region of your screen, apply annotation tools (like text, shapes, arrows, or blur), and securely save the result. The application is built with a local-first philosophy, ensuring your captures are kept private and processed entirely on your machine.",
+        "purpose-header-oauth": "Google OAuth & Drive Permission",
+        "purpose-body-oauth": "To enable seamless cloud saving, GScreenshot integrates directly with Google Drive API. When you authorize the app via Google OAuth, it requests permission to access your Google Drive with the limited <code>.../auth/drive.file</code> scope. This permission is strictly used to create a dedicated <strong>\"GScreenshot\"</strong> folder and upload only the screenshots you choose to sync. We never read, modify, or delete any other files on your Google Drive, nor do we transfer any data to third-party or developer-owned servers.",
         // Privacy Policy Page Translations
         "privacy-policy-title": "GScreenshot Privacy Policy",
         "privacy-policy-last-updated": "Last Updated: July 3, 2026",
@@ -108,7 +114,7 @@ const translations = {
         "terms-download-button": "Download Document"
     },
     uk: {
-        "hero-title": 'Приватність -<br><span class="text-gradient">Належить Вам.</span>',
+        "hero-title": 'Приватність — <span class="text-gradient">Належить Вам.</span>',
         "hero-desc": "Робіть знімки, редагуйте та зберігайте їх у безпеці на своєму Google Drive. Пряме завантаження без посередників.",
         "hero-trouble": "Проблеми з встановленням? ",
         "hero-guide": "Інструкція із запуску",
@@ -160,6 +166,12 @@ const translations = {
         "footer-slogan": "Ваш диск, ваші правила.",
         "footer-privacy-policy": "Політика конфіденційності",
         "footer-terms": "Умови користування",
+        "purpose-title": "Про GScreenshot та Google Drive",
+        "purpose-subtitle": "Як працює наш застосунок і чому він запитує доступ до вашого Google Drive",
+        "purpose-header-app": "Призначення програми",
+        "purpose-body-app": "GScreenshot — це настільний застосунок з відкритим вихідним кодом, створений для спрощення роботи зі скріншотами. Він дозволяє швидко захоплювати будь-яку область екрана, додавати анотації (текст, фігури, стрілки або розмиття) та надійно зберігати результат. Застосунок побудований за принципом локальної обробки, гарантуючи конфіденційність ваших знімків.",
+        "purpose-header-oauth": "Google OAuth та доступ до Диску",
+        "purpose-body-oauth": "Для зручного збереження в хмарі GScreenshot інтегрується безпосередньо з Google Drive API. Коли ви авторизуєте застосунок через Google OAuth, він запитує дозвіл на доступ до вашого Google Drive в межах обмеженої області дії <code>.../auth/drive.file</code>. Цей дозвіл використовується виключно для створення спеціальної папки <strong>«GScreenshot»</strong> та завантаження лише тих скріншотів, які ви вирішите синхронізувати. Ми ніколи не читаємо, не змінюємо й не видаляємо інші файли на вашому Google Drive, а також не передаємо жодних даних на сторонні сервери чи сервери розробника.",
         // Privacy Policy Page Translations
         "privacy-policy-title": "Політика конфіденційності GScreenshot",
         "privacy-policy-last-updated": "Останнє оновлення: 3 липня 2026",
